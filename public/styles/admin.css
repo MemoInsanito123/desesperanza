@@ -1,0 +1,177 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Encabezado */
+h1 {
+    font-size: 2.5em;
+    color: #6a1b9a;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Tabla de Productos */
+#table_pan {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#table_pan thead {
+    background-color: #6a1b9a;
+    color: #fff;
+}
+
+#table_pan th, #table_pan td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#table_pan tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#table_pan tr:hover {
+    background-color: #e0c3fc;
+}
+
+/* Botón Agregar Pan */
+#add_pan {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#add_pan:hover {
+    background-color: #43a047;
+}
+
+/* Enlace Cerrar Sesión */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #e5533a;
+}
+
+/* Estilos para los Diálogos (Modal) */
+dialog {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+dialog h2 {
+    font-size: 1.5em;
+    color: #6a1b9a;
+    margin-bottom: 10px;
+}
+
+dialog form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+dialog form input[type="text"],
+dialog form input[type="number"],
+dialog form input[type="url"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+dialog form button[type="submit"] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+dialog form button[type="submit"]:hover {
+    background-color: #5a148d;
+}
+
+/* Botones de Cancelar en los diálogos */
+dialog button#cancelar_dialog0,
+dialog button#cancelar_dialog,
+dialog button#cancelar_dialog1 {
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+dialog button#cancelar_dialog0:hover,
+dialog button#cancelar_dialog:hover,
+dialog button#cancelar_dialog1:hover {
+    background-color: #e5533a;
+}
+
+/* Animaciones */
+h1 {
+    animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
