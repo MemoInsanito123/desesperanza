@@ -182,5 +182,15 @@ const showPanes = () => {
     }
 };
 
+const add_pan = document.getElementById('add_pan').addEventListener('click', () => {
+    const modal0 = document.querySelector('#modal0');
+    const boton_cancelar0 = document.getElementById('cancelar_dialog0').addEventListener('click', () => {
+        modal0.close();
+    });
+
+    modal0.show();
+});
+
+
 showPanes();
 

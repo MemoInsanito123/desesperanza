@@ -3,8 +3,6 @@ CREATE DATABASE IF NOT EXISTS dbdesesperanza;
 USE dbdesesperanza;
 
 -- Creacion de tablas
-
-
 CREATE TABLE IF NOT EXISTS cliente(
 	id_cliente INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT ,
     nombre_cliente VARCHAR(50) NOT NULL,
@@ -67,23 +65,32 @@ VALUES
 	('Memo', 'memo@gmail.com', '1234'),
     ('Sus', 'sus@gmail.com', '5678');
     
-INSERT INTO pan(nombre_pan, img_pan)
+INSERT INTO pan(nombre_pan, descripcion_pan, img_pan)
 VALUES
-	('Concha', 'img00'),
-    ('Dona', 'img01');
+	('Concha1', 'Esto es una concha' ,'https://chedrauimx.vtexassets.com/arquivos/ids/37690795-1600-auto?v=638648466674000000&width=1600&height=auto&aspect=true');
 
 INSERT INTO precio_pan(id_pan, precio_pan)
 VALUES
-	(1, 20),
-    (2, 10);
+	(1, 20);
 
-INSERT INTO carrito_cliente(id_cliente, id_pan)
+INSERT INTO stock_pan(id_pan, cantidad_stock)
 VALUES 
-	(1,1),
-    (2,1);
+	(1,30);
+
+    
+INSERT INTO administrador(nombre_administrador, correo_electronico_administrador, password_administrador)
+VALUES ('root', 'root@gmail.com', 'root123');
 
 SELECT * FROM cliente;
+SELECT * FROM administrador;
 SELECT * FROM pan;
 SELECT * FROM precio_pan;
+SELECT * FROM stock_pan;
 SELECT * FROM carrito_cliente;
 SELECT * FROM administrador;
+
+
+
+SELECT pan.nombre_pan, pan.descripcion_pan, precio_pan.precio_pan, stock_pan.cantidad_stock, pan.img_pan FROM pan
+JOIN precio_pan ON precio_pan.id_pan = pan.id_pan
+JOIN stock_pan ON stock_pan.id_pan = pan.id_pan;
