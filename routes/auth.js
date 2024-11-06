@@ -12,7 +12,7 @@ router.post('/login', (req, res) => {
 
         if (results.length > 0) {
             req.session.usuario = correo;
-            return res.redirect('/index.html'); // Redirige a la página de inicio
+            return res.redirect('/desesperanza.html'); // Redirige a la página de inicio
         }
 
         // Verificar si es administrador
@@ -44,7 +44,9 @@ router.get('/logout', (req, res) => {
 
 
 router.post('/register', (req, res) => {
-    const { nombre, correo, password } = req.body;
+    const { nombre, correo, password, password1 } = req.body;
+
+
 
     // Ahora, insertar el cliente en la tabla cliente
     const insertClientQuery = 'INSERT INTO cliente (nombre_cliente, correo_electronico_cliente, password_cliente) VALUES (?, ?, ?)';
