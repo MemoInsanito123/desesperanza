@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
-    <!-- <link rel="stylesheet" href="./styles/register.css"> -->
+    <link rel="stylesheet" href="../styles/register.css"> 
 </head>
 <body>
     <div class="contenedorRegister">
         <div class="contenedorForm">
             <h1>Registro de Usuario</h1>
-            <form action="/auth/register" method="POST">
+            <form id="signupForm">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required><br>
 
@@ -28,5 +28,8 @@
         </div>
         <a href="./login.html">Iniciar Sesion</a>
     </div>
+
+    <script src="../scripts/signup.js"></script>
+
 </body>
 </html>

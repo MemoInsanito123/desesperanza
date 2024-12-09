@@ -30,31 +30,16 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.get('/logout', (req, res) => {
-    console.log('Cerrando sesión...');
-    req.session.destroy(err => {
-        if (err) {
-            console.error('Error al cerrar sesión:', err);
-            return res.status(500).send('Error al cerrar sesión');
-        }
-        console.log('Sesión cerrada exitosamente');
-        res.redirect('/login.html'); // Redirige a la página de inicio de sesión
-    });
-});
-
-
-router.post('/register', (req, res) => {
-    const { nombre, correo, password, password1 } = req.body;
-
-
+//Registar un nuevo usuario
+router.post('/signup', (req, res) => {
+    const {nombre, correo, password} = req.body;
 
     // Ahora, insertar el cliente en la tabla cliente
     const insertClientQuery = 'INSERT INTO cliente (nombre_cliente, correo_electronico_cliente, password_cliente) VALUES (?, ?, ?)';
     db.execute(insertClientQuery, [nombre, correo, password], (err, results) => {
-        if (err) {
-            return res.status(500).send('Error al registrar el cliente');
-        }
-        return res.redirect('/login.html');
+        if(err) return res.status(500).send('Error en la consulta');
+        
+        return res.status(201).json({mensaje : 'Usuario Registrado con exito'});
     });
 });
 
